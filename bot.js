@@ -1,15 +1,15 @@
+// Webserver to show we can start ok
 var express = require('express');
 var cfenv = require('cfenv');
+var appEnv = cfenv.getAppEnv();
+
 var app = express();
 app.use(express.static(__dirname + '/public'));
-var appEnv = cfenv.getAppEnv();
 app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("server starting on " + appEnv.url);
 });
 
-
-
-
+// botkit for helpful utils
 var Botkit = require('botkit')
 var os = require('os');
 
@@ -23,20 +23,24 @@ var bot = controller.spawn(
   }
 ).startRTM();
 
+
+// Watson services initialize
 var watson = require('watson-developer-cloud');
+var watson_pi_credentials = appEnv.getServiceCreds('Personality Insights-rf');
 
 var personality_insights = watson.personality_insights({
-    username: process.env.watson_username,
-    password: process.env.watson_password,
-    version: 'v2'
+  username: watson_pi_credentials.username,
+  password: watson_pi_credentials.password,
+  version: 'v2'
 });
 
 var tone_analyzer = watson.tone_analyzer({
-    username: process.env.watson_username,
-    password: process.env.watson_password,
-    version: 'v2-experimental'
+  username: watson_pi_credentials.username,
+  password: watson_pi_credentials.password,
+  version: 'v2-experimental'
 });
 
+// Callbacks
 controller.hears(['watson (.*)'],'ambient,mention', function(bot, message) {
   console.log(message.text);
   tone_analyzer.tone(
