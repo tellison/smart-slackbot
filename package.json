@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "cfenv": "1.0.x",
+    "express": "4.12.x",
     "botkit": "~0.0.5",
     "watson-developer-cloud": "~1.1.2"
   },
