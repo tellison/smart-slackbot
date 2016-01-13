@@ -1,8 +1,14 @@
+declared-services:
+  watson-personality-insights:
+    label: personality_insights
+    plan: tiered
 applications:
-- path: .
+- name: MySlackBot
+  service:
+  - watson-personality-insights
+  path: .
   memory: 128M
   instances: 1
   domain: mybluemix.net
-  name: MySlackBot
-  host: myslackbot
+  host: myotherslackbot
   disk_quota: 512M
