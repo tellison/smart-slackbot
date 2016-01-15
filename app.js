@@ -38,31 +38,14 @@ var tone_analyzer = watson.tone_analyzer({
   version: 'v2-experimental'
 });
 
+var my_watson = require('./mywatson.js');
+
 // Callbacks
 controller.hears(['watson (.*)'],'ambient,mention', function(bot, message) {
   console.log(message.text);
-  tone_analyzer.tone(
-    {
-      text: message.text
-    },
-    function(err, response) {
-      if (err) {
-        console.log('ERROR', err);
-      }
-      else {
-        console.log(response);
-        console.log(response.children[2].children[2]);
-        var agreeableness = response.children[2].children[2].normalized_score;
-        if (agreeableness < 0) {
-          bot.reply(message, 'That was not a very nice thing to say.');
-        } else {
-           if (agreeableness > 0.5) {
-             bot.reply(message, 'Thank you!');
-            }
-        }
-      }
-    } // end function
-  ); // end tone_analyzer
+  my_watson.watson_analyze(message.text, function(response) {
+    bot.reply(message, response);
+  });
 });
 
 controller.hears(['analyze', 'analyse'], 'direct_message,direct_mention', function(bot, message) {

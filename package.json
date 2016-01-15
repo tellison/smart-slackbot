@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A simple bot for slack connectivity",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "cfenv": "1.0.x",
