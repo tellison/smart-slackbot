@@ -21,6 +21,12 @@ var tone_analyzer = watson.tone_analyzer({
 
 module.exports = {
 
+  /*
+   * Analyze the given message and call back with a suitable response
+   * based on the agreeableness of the message.
+   * @param {string} msg - The message to be assessed
+   * @param {Function} callback - The callback function taking a string response
+   */
   watson_analyze: function(msg, callback) {
     console.log('analysing '+ msg);
     tone_analyzer.tone(
@@ -49,5 +55,4 @@ module.exports = {
   } // watson_analyze
 
 };
-
 
