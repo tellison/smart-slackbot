@@ -17,16 +17,14 @@ var controller = Botkit.slackbot({
   debug: false,
 });
 
-var bot = controller.spawn(
-  {
-    token: process.env.slack_token
-  }
-).startRTM();
+var bot = controller.spawn({
+  token: process.env.slack_token
+}).startRTM();
 
 
 // Watson services initialize
 var watson = require('watson-developer-cloud');
-var watson_pi_credentials = appEnv.getServiceCreds('Personality Insights-rf');
+var watson_pi_credentials = appEnv.getServiceCreds('Personality Insights-fd');
 
 var personality_insights = watson.personality_insights({
   username: watson_pi_credentials.username,

@@ -9,6 +9,6 @@ applications:
   path: .
   memory: 128M
   instances: 1
-  domain: mybluemix.net
-  host: myotherslackbot
+  domain: eu-gb.mybluemix.net
+  host: myslackbot
   disk_quota: 512M
