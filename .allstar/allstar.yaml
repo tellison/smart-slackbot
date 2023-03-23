@@ -1,0 +1,4 @@
+  disableRepoOverride: true
+  optInRepos:
+  - smart-slackbot
+  - okapi
