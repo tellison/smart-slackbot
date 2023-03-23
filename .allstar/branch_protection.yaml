@@ -10,10 +10,11 @@
 # optConfig:
 #   optIn: true
 
-# Action: defines which action to take, default log, other: issue...
-# Overrides the same setting in org-level configuration.
+# Action: defines which action to take.
+# Valid values log|issue|fix. Overrides the same setting in org-level configuration.
+# https://github.com/ossf/allstar/blob/main/README.md#actions
 #
-# action: issue
+# action: log
 
 # EnforceDefault overrides the same setting in org-level, only if present.
 #
