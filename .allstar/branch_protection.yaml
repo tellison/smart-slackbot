@@ -1,3 +1,10 @@
+#
+# Configuration for branch protection
+#
+# https://github.com/ossf/allstar/blob/main/README.md#branch-protection
+#
+
+
 # OptConfig is the repo-level opt in/out config.
 #
 # optConfig:
