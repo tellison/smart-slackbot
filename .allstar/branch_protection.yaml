@@ -11,54 +11,56 @@
 #   optIn: true
 
 # Action: defines which action to take.
-# Valid values log|issue|fix. Overrides the same setting in org-level configuration.
+# Valid values log|issue|fix. Overrides the same setting in the org-level configuration.
 # https://github.com/ossf/allstar/blob/main/README.md#actions
 #
 # action: log
 
-# EnforceDefault overrides the same setting in org-level, only if present.
+# EnforceDefault : enforce policy on default branch.
+# Overrides the same setting at org-level.
 #
 # enforceDefault: true
 
-# EnforceBranches adds more branches to the org-level list. Does not
-# override. Always allowed irrespective of DisableRepoOverride setting.
+# EnforceBranches : set of non-default branches to enforce policy on.
+# Adds more branches to the org-level list. Does not override. Always
+# allowed irrespective of DisableRepoOverride setting.
 #
-# enforceBranches: [ master ]
+# enforceBranches: [ master, main ]
 
 # RequireApproval : enforce approval of PRs.
-# Overrides the same setting in org-level.
+# Overrides the same setting at org-level.
 #
 # requireApproval: true
 
 # RequireCodeOwnerReviews : enforce code owner reviews on PRs.
 # If set to true, then "requireApproval" must also be true. Overrides the
-# same setting in org-level.
+# same setting at org-level.
 #
 # requireCodeOwnerReviews: false
   
 # ApprovalCount : the number of required PR approvals.
-# Overrides the same setting in org-level, only if present.
+# Overrides the same setting at org-level.
 #
 # approvalCount: 1
 
 # DismissStale : require PR approvals be dismissed when a PR is updated.
-# Overrides the same setting in org-level.
+# Overrides the same setting at org-level.
 #
 # dismissStale: true
 
 # BlockForce : block force pushes.
-# Overrides the same setting in org-level.
+# Overrides the same setting at org-level.
 #
 # blockForce: true
 
 # EnforceOnAdmins : apply the branch protection rules to administrators.
-# Overrides the same setting in org-level, only if present.
+# Overrides the same setting at org-level.
 #
 # enforceOnAdmins: true
 
 # RequireUpToDateBranch : branches must be up to date before merging.
 # Only used if RequireStatusChecks is true. Overrides the same setting
-# in org-level.
+# at org-level.
 #
 # requireUpToDateBranch: false
 
