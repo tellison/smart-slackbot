@@ -1,0 +1,69 @@
+# OptConfig is the repo-level opt in/out config.
+#
+# optConfig:
+#   optIn: true
+
+# Action: defines which action to take, default log, other: issue...
+# Overrides the same setting in org-level configuration.
+#
+# action: issue
+
+# EnforceDefault overrides the same setting in org-level, only if present.
+#
+# enforceDefault: true
+
+# EnforceBranches adds more branches to the org-level list. Does not
+# override. Always allowed irrespective of DisableRepoOverride setting.
+#
+# enforceBranches: [ master ]
+
+# RequireApproval : enforce approval of PRs.
+# Overrides the same setting in org-level.
+#
+# requireApproval: true
+
+# RequireCodeOwnerReviews : enforce code owner reviews on PRs.
+# If set to true, then "requireApproval" must also be true. Overrides the
+# same setting in org-level.
+#
+# requireCodeOwnerReviews: false
+  
+# ApprovalCount : the number of required PR approvals.
+# Overrides the same setting in org-level, only if present.
+#
+# approvalCount: 1
+
+# DismissStale : require PR approvals be dismissed when a PR is updated.
+# Overrides the same setting in org-level.
+#
+# dismissStale: true
+
+# BlockForce : block force pushes.
+# Overrides the same setting in org-level.
+#
+# blockForce: true
+
+# EnforceOnAdmins : apply the branch protection rules to administrators.
+# Overrides the same setting in org-level, only if present.
+#
+# enforceOnAdmins: true
+
+# RequireUpToDateBranch : branches must be up to date before merging.
+# Only used if RequireStatusChecks is true. Overrides the same setting
+# in org-level.
+#
+# requireUpToDateBranch: false
+
+# RequireStatusChecks : a list of status checks that are required in
+# order to merge into the protected branch.
+# Each entry must specify the context, and optionally an appID.
+# Overrides the same setting in org-level. Omitting will lead to taking
+# the org-level config as is, but specifying an empty list
+# (`requireStatusChecks: []`) will override the setting to be empty.
+#
+# requireStatusChecks: []
+
+# RequireSignedCommits : require signed commits on protected branches.
+# Overrides the same setting in org-level.
+#
+# requireSignedCommits: false
