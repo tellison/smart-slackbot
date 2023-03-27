@@ -46,7 +46,7 @@
 # DismissStale : require PR approvals be dismissed when a PR is updated.
 # Overrides the same setting at org-level.
 #
-# dismissStale: true
+dismissStale: false
 
 # BlockForce : block force pushes.
 # Overrides the same setting at org-level.
